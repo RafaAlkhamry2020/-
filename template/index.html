@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+			margin:0 0px 5px 150px;
+			
+		}
+        div{float: left;
+            margin: 20px;}
+    </style>
+</head>
+<body>
+    <header>
+        <div>Posty</div>
+        <div><a href="{{url_for('post_add')}}" </div>
+    </header>
+    <main>
+      {% for post in posts %}
+      <div>
+        <img src="{{post.photo_url}}">
+      </div>
+        <h2>{{post.name}}</h2> 
+            <p>{{post.body}}</p>
+            <div>
+              <a href="edit">Edit </a> |
+              <a href="delete">Delete </a>
+            </div>
+      {% endfor %}
+    </main>
+    
+</body>
+</html>
